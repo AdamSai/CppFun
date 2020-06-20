@@ -1,0 +1,2 @@
+D:\Github\side_projects\sorting_cpp\SortingFun\Debug\SortingFun.exe
+D:\Github\side_projects\sorting_cpp\SortingFun\Debug\SortingFun.pdb
