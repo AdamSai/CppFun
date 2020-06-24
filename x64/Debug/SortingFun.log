@@ -1,0 +1,4 @@
+﻿  SortingFun.cpp
+D:\Github\side_projects\sorting_cpp\SortingFun\SortingFun.cpp(50,6): warning C4101: 'value': unreferenced local variable
+E:\Program Files\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1850,5): warning : The referenced project '.\compile\ZERO_CHECK.vcxproj' does not exist.
+  SortingFun.vcxproj -> D:\Github\side_projects\sorting_cpp\SortingFun\x64\Debug\SortingFun.exe

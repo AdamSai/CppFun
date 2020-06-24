@@ -13,8 +13,8 @@ namespace sorting
 		node();
 		node* children[28]{};
 		unsigned short int count;
-		std::string value; 
-		void insert(node *root, const std::string& str);
+		std::string value;
+		static void insert(node *root, const std::string& str);
 	private:
 		static int hash(char c);
 	};

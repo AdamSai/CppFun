@@ -17,9 +17,9 @@ trie::trie()
 void trie::sort(std::vector<std::string>& str)
 {
 	node* root = new node();
-	for (unsigned int i = 0; i < str.size(); i++)
+	for (auto& i : str)
 	{
-		root->insert(root, str[i]);
+		sorting::node::insert(root, i);
 	}
 
 	to_array(root, str);

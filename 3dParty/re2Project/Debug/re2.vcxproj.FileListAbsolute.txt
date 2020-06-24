@@ -1,0 +1,2 @@
+D:\Github\side_projects\sorting_cpp\SortingFun\3dParty\re2Project\Debug\re2.lib
+D:\Github\side_projects\sorting_cpp\SortingFun\3dParty\re2Project\Debug\re2.pdb

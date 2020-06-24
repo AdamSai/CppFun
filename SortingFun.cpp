@@ -1,35 +1,93 @@
 // SortingFun.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include <iostream>
-
+#include <fstream>
+#include <regex>
+#include <sstream>
 #include "trie.h"
+#include "3dParty/re2Project/re2/re2.h"
+#include "3dParty/re2Project/re2/stringpiece.h"
+
 using namespace sorting;
 int main()
 {
 	trie* my_trie = new trie();
-	std::vector<std::string> strings = { "hello", "world", "my", "name", "is", "adam", "what", "is", "your", "name" };
-	std::cout << "before:\n";
-	for(const std::string& s : strings)
-	{
-		std::cout << s << std::endl;
-	}
-	trie::sort(strings);
-	std::cout << "after:\n";
 
-	for (const std::string& s : strings)
+	std::string text_file_path =
+		R"(D:\Github\Algorithms\SortingShakespeare\SortingShakespeare\shakespeare-complete-works.txt)";
+
+	// Read file
+
+	std::ifstream inFile;
+	std::cout << "Opening file\n";
+	inFile.open(text_file_path);
+	if(!inFile)
 	{
-		std::cout << s << std::endl;
+		std::cerr << "unable to open file at path: " << text_file_path;
+		exit(1);
 	}
+	std::cout << "Reading file\n";
+	std::stringstream strStream;
+	strStream << inFile.rdbuf();
+	auto str = strStream.str();
+	// Convert to lower case
+
+	std::cout << "Converting string to lower case\n";
+	std::for_each(str.begin(), str.end(), [](char& c)
+	{
+		c = ::tolower(c);
+	});
+	std::cout << "Finished\n";
+
+
+	
+	std::cout << "Reading file\n";
+	inFile.close();
+
+	std::vector<std::string> matches;
+	re2::StringPiece input(str);
+	std::string var;
+	int value;
+	std::cout << "Finished\n";
+
+	auto begin = std::chrono::high_resolution_clock::now();
+	std::cout << "Finding matches" << std::endl;
+	RE2 regexp("([a-zA-Z]+'?-?[a-zA-Z]*)");
+	while(RE2::FindAndConsume(&input, regexp, &var))
+	{
+		matches.push_back(var);
+	}
+	auto end = std::chrono::high_resolution_clock::now();
+	auto dur = end - begin;
+	auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+	
+	std::cout << "Matches found: " << matches.size() << " in " << ms << " ms " << std::endl;
+
+	
+
+
+
+	// Test
+	std::cout << "============Sorting:============\n";
+	std::cout << "============before:============\n";
+	for(int i = 0; i < 20; i++)
+	{
+		std::cout << matches[i] << std::endl;
+	}
+	auto start = std::chrono::high_resolution_clock::now();
+	trie::sort(matches);
+	auto finish = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> elapsed = finish - start;
+	std::cout << "============after:============\n";
+
+	for (int i = 0; i < 20; i++)
+	{
+		std::cout << matches[i] << std::endl;
+	}
+
+
+	 dur = end - begin;
+	 ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+
+	std::cout << "Finished sorting in: " << elapsed.count() << std::endl;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

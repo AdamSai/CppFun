@@ -1,2 +1,8 @@
-﻿  trie.cpp
-  SortingFun.vcxproj -> D:\Github\side_projects\sorting_cpp\SortingFun\Debug\SortingFun.exe
+﻿  SortingFun.cpp
+E:\Program Files\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1850,5): warning : The referenced project '.\compile\ZERO_CHECK.vcxproj' does not exist.
+SortingFun.obj : error LNK2019: unresolved external symbol "public: __thiscall re2::RE2::RE2(char const *)" (??0RE2@re2@@QAE@PBD@Z) referenced in function _main
+SortingFun.obj : error LNK2019: unresolved external symbol "public: __thiscall re2::RE2::~RE2(void)" (??1RE2@re2@@QAE@XZ) referenced in function _main
+SortingFun.obj : error LNK2019: unresolved external symbol "public: static bool __cdecl re2::RE2::ConsumeN(class re2::StringPiece *,class re2::RE2 const &,class re2::RE2::Arg const * const * const,int)" (?ConsumeN@RE2@re2@@SA_NPAVStringPiece@2@ABV12@QBQBVArg@12@H@Z) referenced in function "public: static bool __cdecl re2::RE2::Consume<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *>(class re2::StringPiece *,class re2::RE2 const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * &&)" (??$Consume@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@RE2@re2@@SA_NPAVStringPiece@1@ABV01@$$QAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SortingFun.obj : error LNK2019: unresolved external symbol "private: static bool __cdecl re2::RE2::Arg::parse_string(char const *,unsigned int,void *)" (?parse_string@Arg@RE2@re2@@CA_NPBDIPAX@Z) referenced in function "public: __thiscall re2::RE2::Arg::Arg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *)" (??0Arg@RE2@re2@@QAE@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+D:\Github\side_projects\sorting_cpp\SortingFun\3dParty\re2Project\Debug\re2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\Github\side_projects\sorting_cpp\SortingFun\Debug\SortingFun.exe : fatal error LNK1120: 4 unresolved externals

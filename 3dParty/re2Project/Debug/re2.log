@@ -1,0 +1,27 @@
+﻿E:\Program Files\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1850,5): warning : The referenced project '.\compile\ZERO_CHECK.vcxproj' does not exist.
+  bitstate.cc
+  compile.cc
+  dfa.cc
+  filtered_re2.cc
+  mimics_pcre.cc
+  nfa.cc
+  onepass.cc
+  parse.cc
+  perl_groups.cc
+  prefilter.cc
+  prefilter_tree.cc
+  prog.cc
+  re2.cc
+  regexp.cc
+  set.cc
+  simplify.cc
+  stringpiece.cc
+  tostring.cc
+  unicode_casefold.cc
+  unicode_groups.cc
+  Generating Code...
+  Compiling...
+  rune.cc
+  strutil.cc
+  Generating Code...
+  re2.vcxproj -> D:\Github\side_projects\sorting_cpp\SortingFun\3dParty\re2Project\Debug\re2.lib

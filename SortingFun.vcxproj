@@ -139,13 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="node.cpp" />
     <ClCompile Include="SortingFun.cpp" />
     <ClCompile Include="trie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="node.h" />
     <ClInclude Include="trie.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="3dParty\re2Project\re2.vcxproj">
+      <Project>{7ebab5b3-b887-3eb5-95f6-4ebde1b727e2}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
