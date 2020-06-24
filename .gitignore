@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 **/.vs
+**/Release
 # Compiled Object files
 *.slo
 *.lo

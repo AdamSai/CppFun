@@ -38,17 +38,13 @@ int main()
 		c = ::tolower(c);
 	});
 	std::cout << "Finished\n";
-
-
-	
-	std::cout << "Reading file\n";
 	inFile.close();
 
+
+	// Regex
 	std::vector<std::string> matches;
 	re2::StringPiece input(str);
 	std::string var;
-	int value;
-	std::cout << "Finished\n";
 
 	auto begin = std::chrono::high_resolution_clock::now();
 	std::cout << "Finding matches" << std::endl;
@@ -69,25 +65,27 @@ int main()
 
 	// Test
 	std::cout << "============Sorting:============\n";
-	std::cout << "============before:============\n";
-	for(int i = 0; i < 20; i++)
-	{
-		std::cout << matches[i] << std::endl;
-	}
-	auto start = std::chrono::high_resolution_clock::now();
-	trie::sort(matches);
-	auto finish = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double> elapsed = finish - start;
-	std::cout << "============after:============\n";
+	//std::cout << "============before:============\n";
+	//for(int i = 0; i < 20; i++)
+	//{
+	//	std::cout << matches[i] << std::endl;
+	//}
+	begin = std::chrono::high_resolution_clock::now();
 
-	for (int i = 0; i < 20; i++)
-	{
-		std::cout << matches[i] << std::endl;
-	}
+	trie::sort(matches);
+	end = std::chrono::high_resolution_clock::now();
+	dur = end - begin;
+	ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+	//std::cout << "============after:============\n";
+
+	//for (int i = 0; i < 20; i++)
+	//{
+	//	std::cout << matches[i] << std::endl;
+	//}
 
 
 	 dur = end - begin;
 	 ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
 
-	std::cout << "Finished sorting in: " << elapsed.count() << std::endl;
+	std::cout << "Finished sorting in: " << ms << "ms" << std::endl;
 }
